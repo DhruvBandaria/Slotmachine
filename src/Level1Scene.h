@@ -81,12 +81,15 @@ private:
 	Label* m_pBetAmount;
 	Label* m_pJackpotAmount;
 	Label* m_pLog;
-	
+
+	bool isSpining;
+	bool isCUrrentlySpining;
 	
 	//Button* m_pAddOneButton;
 	// private data member
 	glm::vec2 m_mousePosition;
-	
+	int i = 0, counter;
+	std::string message;
 	
 };
 

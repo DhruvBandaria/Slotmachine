@@ -52,6 +52,164 @@ void Level1Scene::update()
 	m_pReel3->update();
 	m_pReel2->setPosition(glm::vec2(500, m_pReel2->getPosition().y));
 	m_pReel3->setPosition(glm::vec2(670, m_pReel3->getPosition().y));
+
+	if(isSpining)
+	{
+		if(!isCUrrentlySpining)
+		{
+			i = TheGame::Instance()->getFrames();
+			counter = i + 250;
+			isCUrrentlySpining = true;
+			m_pReel1->toggleSpin();
+			m_pReel2->toggleSpin();
+			m_pReel3->toggleSpin();
+		}
+		if(isCUrrentlySpining)
+		{
+			std::cout << "I:" << i << "  Counter:" << counter << std::endl;
+			if(i>counter)
+			{
+				std::string temp = m_slotMachine->getFirstOutcome();
+				if (temp == "blank")
+				{
+					m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, -20));
+					m_pReel1->toggleSpin();
+				}
+				else if (temp == "Grapes")
+				{
+					m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 715));
+					m_pReel1->toggleSpin();
+				}
+				else if (temp == "Banana")
+				{
+					m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 615));
+					m_pReel1->toggleSpin();
+				}
+				else if (temp == "Orange")
+				{
+					m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 515));
+					m_pReel1->toggleSpin();
+				}
+				else if (temp == "Cherry")
+				{
+					m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 415));
+					m_pReel1->toggleSpin();
+				}
+				else if (temp == "Bar")
+				{
+					m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 305));
+					m_pReel1->toggleSpin();
+				}
+				else if (temp == "Bell")
+				{
+					m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 190));
+					m_pReel1->toggleSpin();
+				}
+				else if (temp == "Seven")
+				{
+					m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 85));
+					m_pReel1->toggleSpin();
+				}
+
+
+				temp = m_slotMachine->getSecondOutcome();
+				if (temp == "blank")
+				{
+					m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, -20));
+					m_pReel2->toggleSpin();
+				}
+				else if (temp == "Grapes")
+				{
+					m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 715));
+					m_pReel2->toggleSpin();
+				}
+				else if (temp == "Banana")
+				{
+					m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 615));
+					m_pReel2->toggleSpin();
+				}
+				else if (temp == "Orange")
+				{
+					m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 515));
+					m_pReel2->toggleSpin();
+				}
+				else if (temp == "Cherry")
+				{
+					m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 415));
+					m_pReel2->toggleSpin();
+				}
+				else if (temp == "Bar")
+				{
+					m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 305));
+					m_pReel2->toggleSpin();
+				}
+				else if (temp == "Bell")
+				{
+					m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 190));
+					m_pReel2->toggleSpin();
+				}
+				else if (temp == "Seven")
+				{
+					m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 85));
+					m_pReel2->toggleSpin();
+				}
+
+
+				temp = m_slotMachine->getThirdOutcome();
+				if (temp == "blank")
+				{
+					m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, -20));
+					m_pReel3->toggleSpin();
+				}
+				else if (temp == "Grapes")
+				{
+					m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 715));
+					m_pReel3->toggleSpin();
+				}
+				else if (temp == "Banana")
+				{
+					m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 615));
+					m_pReel3->toggleSpin();
+				}
+				else if (temp == "Orange")
+				{
+					m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 515));
+					m_pReel3->toggleSpin();
+				}
+				else if (temp == "Cherry")
+				{
+					m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 415));
+					m_pReel3->toggleSpin();
+				}
+				else if (temp == "Bar")
+				{
+					m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 305));
+					m_pReel3->toggleSpin();
+				}
+				else if (temp == "Bell")
+				{
+					m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 190));
+					m_pReel3->toggleSpin();
+				}
+				else if (temp == "Seven")
+				{
+					m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 85));
+					m_pReel3->toggleSpin();
+				}
+				m_slotMachine->resetAfterSpin();
+				m_pBetAmount->setText("Current Bet: " + m_slotMachine->getBetAmount());
+				m_pCurrentBalance->setText("Current Balance : " + m_slotMachine->getPlayerMoney());
+				m_pLog->setText(message);
+				isSpining = false;
+				isCUrrentlySpining = false;
+			}
+			else
+			{
+				i++;
+			}
+			
+		}
+	}
 	
 	m_pAddOne->setMousePosition(m_mousePosition);
 	m_pAddOne->ButtonClick(this);
@@ -270,6 +428,9 @@ void Level1Scene::start()
 	m_pLog->setParent(this);
 	addChild(m_pLog);
 
+	isSpining = false;
+	isCUrrentlySpining = false;
+	
 	//m_pAddOneButton = new Button("../Assets/textures/AddOneButton.png", "addOne",
 		//ADD_ONE, glm::vec2(270, 590), true);
 	
@@ -322,149 +483,18 @@ void Level1Scene::restStats()
 
 void Level1Scene::spin()
 {
-	std::string message = m_slotMachine->spin();
-	m_pLog->setText(message);
+	message = m_slotMachine->spin();
 	if (message != "Please select your bet") {
-		showReelSpin();
+		isSpining = true;
 	}
 }
 
 void Level1Scene::showReelSpin()
 {
-	m_pReel1->toggleSpin();
-	m_pReel2->toggleSpin();
-	m_pReel3->toggleSpin();
 	
-	std::string temp = m_slotMachine->getFirstOutcome();
-	if(temp == "blank")
-	{
-		m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, -20));
-		m_pReel1->toggleSpin();
-	}
-	else if(temp == "Grapes")
-	{
-		m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 715));
-		m_pReel1->toggleSpin();
-	}
-	else if (temp == "Banana")
-	{
-		m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 615));
-		m_pReel1->toggleSpin();
-	}
-	else if (temp == "Orange")
-	{
-		m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 515));
-		m_pReel1->toggleSpin();
-	}
-	else if (temp == "Cherry")
-	{
-		m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 415));
-		m_pReel1->toggleSpin();
-	}
-	else if (temp == "Bar")
-	{
-		m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 305));
-		m_pReel1->toggleSpin();
-	}
-	else if (temp == "Bell")
-	{
-		m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 190));
-		m_pReel1->toggleSpin();
-	}
-	else if (temp == "Seven")
-	{
-		m_pReel1->setPosition(glm::vec2(m_pReel1->getPosition().x, 85));
-		m_pReel1->toggleSpin();
-	}
 
 	
-	temp = m_slotMachine->getSecondOutcome();
-	if (temp == "blank")
-	{
-		m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, -20));
-		m_pReel2->toggleSpin();
-	}
-	else if (temp == "Grapes")
-	{
-		m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 715));
-		m_pReel2->toggleSpin();
-	}
-	else if (temp == "Banana")
-	{
-		m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 615));
-		m_pReel2->toggleSpin();
-	}
-	else if (temp == "Orange")
-	{
-		m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 515));
-		m_pReel2->toggleSpin();
-	}
-	else if (temp == "Cherry")
-	{
-		m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 415));
-		m_pReel2->toggleSpin();
-	}
-	else if (temp == "Bar")
-	{
-		m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 305));
-		m_pReel2->toggleSpin();
-	}
-	else if (temp == "Bell")
-	{
-		m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 190));
-		m_pReel2->toggleSpin();
-	}
-	else if (temp == "Seven")
-	{
-		m_pReel2->setPosition(glm::vec2(m_pReel1->getPosition().x, 85));
-		m_pReel2->toggleSpin();
-	}
-
-
-	temp = m_slotMachine->getThirdOutcome();
-	if (temp == "blank")
-	{
-		m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, -20));
-		m_pReel3->toggleSpin();
-	}
-	else if (temp == "Grapes")
-	{
-		m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 715));
-		m_pReel3->toggleSpin();
-	}
-	else if (temp == "Banana")
-	{
-		m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 615));
-		m_pReel3->toggleSpin();
-	}
-	else if (temp == "Orange")
-	{
-		m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 515));
-		m_pReel3->toggleSpin();
-	}
-	else if (temp == "Cherry")
-	{
-		m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 415));
-		m_pReel3->toggleSpin();
-	}
-	else if (temp == "Bar")
-	{
-		m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 305));
-		m_pReel3->toggleSpin();
-	}
-	else if (temp == "Bell")
-	{
-		m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 190));
-		m_pReel3->toggleSpin();
-	}
-	else if (temp == "Seven")
-	{
-		m_pReel3->setPosition(glm::vec2(m_pReel1->getPosition().x, 85));
-		m_pReel3->toggleSpin();
-	}
-	m_slotMachine->resetAfterSpin();
-	m_pBetAmount->setText("Current Bet: " + m_slotMachine->getBetAmount());
-	m_pCurrentBalance->setText("Current Balance : " + m_slotMachine->getPlayerMoney());
+	
 }
 
 glm::vec2 Level1Scene::getMousePosition()

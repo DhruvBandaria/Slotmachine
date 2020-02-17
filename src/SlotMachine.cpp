@@ -72,8 +72,9 @@ std::string SlotMachine::spin()
 }
 
 
-void SlotMachine::checkJackpot()
+bool SlotMachine::checkJackpot()
 {
+	
 }
 
 std::string SlotMachine::showWinMessage()

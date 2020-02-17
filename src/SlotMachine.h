@@ -13,7 +13,7 @@ public:
 	void rest();
 	void resetAfterSpin();
 	std::string spin();
-	void checkJackpot();
+	bool checkJackpot();
 	std::string showWinMessage();
 	std::string showLossMessage();
 	bool checkRange(int value,int lowerBound,int upperBound);
@@ -41,7 +41,7 @@ private:
 	int m_blanks;
 	int m_totalFruits;
 	std::string betLine[3] = { "", "", "" };
-	static SlotMachine* s_pSlotmachine;
+	///static SlotMachine* s_pSlotmachine;
 };
 
 
