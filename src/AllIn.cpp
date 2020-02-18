@@ -5,7 +5,7 @@ AllIN::AllIN()// call super constructor
 	:Button(
 		"../Assets/textures/AllInButton.png",
 		"allIn",
-		ALL_IN, glm::vec2(570, 590)), m_isClicked(false)
+		ALL_IN, glm::vec2(370, 590)), m_isClicked(false)
 {
 
 }

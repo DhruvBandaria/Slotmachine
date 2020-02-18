@@ -50,8 +50,8 @@ void Level1Scene::update()
 	m_pReel3->setVelocity(glm::vec2(0, 20));
 	m_pReel2->update();
 	m_pReel3->update();
-	m_pReel2->setPosition(glm::vec2(500, m_pReel2->getPosition().y));
-	m_pReel3->setPosition(glm::vec2(670, m_pReel3->getPosition().y));
+	m_pReel2->setPosition(glm::vec2(300, m_pReel2->getPosition().y));
+	m_pReel3->setPosition(glm::vec2(470, m_pReel3->getPosition().y));
 
 	if(isSpining)
 	{
@@ -421,13 +421,13 @@ void Level1Scene::start()
 	//Labels
 	SDL_Color white = { 255,255,255,255 };
 	m_pBetAmount = new Label("Current Bet: 0","Consolas",15,white,
-		glm::vec2(320,460),0,true);
+		glm::vec2(120,460),0,true);
 
 	m_pCurrentBalance= new Label("Current Balance : 1000", "Consolas", 15, white,
-		glm::vec2(345, 480), 0, true);
+		glm::vec2(145, 480), 0, true);
 
 	m_pLog= new Label("", "Consolas", 15, white,
-		glm::vec2(600, 470), 0, true);
+		glm::vec2(400, 470), 0, true);
 
 	m_pCurrentBalance->setParent(this);
 	addChild(m_pCurrentBalance);

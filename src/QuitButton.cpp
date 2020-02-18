@@ -4,7 +4,7 @@
 QuitButton::QuitButton() :Button(
 	                          "../Assets/textures/QuitButton.png",
 	                          "quitButton",
-	                          ADD_FIFTY, glm::vec2(710, 650)), m_isClicked(false)
+	                          ADD_FIFTY, glm::vec2(510, 650)), m_isClicked(false)
 {
 }
 

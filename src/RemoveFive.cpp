@@ -6,7 +6,7 @@ RemoveFive::RemoveFive()
 	:Button(
 		"../Assets/textures/RemoveFiveButton.png",
 		"removeFive",
-		REMOVE_FIVE, glm::vec2(390, 650)), m_isClicked(false)
+		REMOVE_FIVE, glm::vec2(190, 650)), m_isClicked(false)
 {
 
 }

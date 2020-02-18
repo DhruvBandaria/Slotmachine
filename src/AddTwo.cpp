@@ -5,7 +5,7 @@ AddTwo::AddTwo()// call super constructor
 	:Button(
 		"../Assets/textures/AddTwoButton.png",
 		"addTwo",
-		ADD_TWO, glm::vec2(330, 590)), m_isClicked(false)
+		ADD_TWO, glm::vec2(130, 590)), m_isClicked(false)
 {
 
 }

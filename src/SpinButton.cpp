@@ -5,7 +5,7 @@ SpinButton::SpinButton()
 	:Button(
 		"../Assets/textures/SpinButton.png",
 		"spinButton",
-		ADD_FIFTY, glm::vec2(680, 590)), m_isClicked(false)
+		ADD_FIFTY, glm::vec2(480, 590)), m_isClicked(false)
 {
 
 }

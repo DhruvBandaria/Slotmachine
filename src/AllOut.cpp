@@ -6,7 +6,7 @@ AllOut::AllOut()
 	:Button(
 		"../Assets/textures/AllOutButton.png",
 		"allOut",
-		ALL_OUT, glm::vec2(570, 650)), m_isClicked(false)
+		ALL_OUT, glm::vec2(370, 650)), m_isClicked(false)
 {
 
 }

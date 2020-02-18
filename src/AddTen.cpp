@@ -5,7 +5,7 @@ AddTen::AddTen()// call super constructor
 	:Button(
 		"../Assets/textures/AddTenButton.png",
 		"addTen",
-		ADD_TEN, glm::vec2(450, 590)), m_isClicked(false)
+		ADD_TEN, glm::vec2(250, 590)), m_isClicked(false)
 {
 
 }

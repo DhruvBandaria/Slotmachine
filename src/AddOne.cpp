@@ -8,7 +8,7 @@ AddOne::AddOne()
 	:Button(
 		"../Assets/textures/AddOneButton.png",
 		"addOne",
-		ADD_ONE, glm::vec2(270, 590)), m_isClicked(false)
+		ADD_ONE, glm::vec2(70, 590)), m_isClicked(false)
 {
 
 }

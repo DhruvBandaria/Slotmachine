@@ -6,7 +6,7 @@ RemoveFifty::RemoveFifty()
 	:Button(
 		"../Assets/textures/RemoveFiftyButton.png",
 		"removeFifty",
-		REMOVE_FIFTY, glm::vec2(510, 650)), m_isClicked(false)
+		REMOVE_FIFTY, glm::vec2(310, 650)), m_isClicked(false)
 {
 
 }

@@ -13,7 +13,7 @@ Reel::Reel()
 	setWidth(size.x);
 	setHeight(size.y);
 
-	setPosition(glm::vec2(330.0f, 705));
+	setPosition(glm::vec2(130.0f, 705));
 	setVelocity(glm::vec2(0, 20));
 	setType(GameObjectType::REEL);
 	isSpining = false;

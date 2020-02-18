@@ -6,7 +6,7 @@ RemoveTwo::RemoveTwo()
 	:Button(
 		"../Assets/textures/RemoveTwoButton.png",
 		"removeTwo",
-		REMOVE_TWO, glm::vec2(330, 650)), m_isClicked(false)
+		REMOVE_TWO, glm::vec2(130, 650)), m_isClicked(false)
 {
 
 }

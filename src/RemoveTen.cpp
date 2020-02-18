@@ -6,7 +6,7 @@ RemoveTen::RemoveTen()
 	:Button(
 		"../Assets/textures/RemoveTenButton.png",
 		"removeTen",
-		REMOVE_TEN, glm::vec2(450, 650)), m_isClicked(false)
+		REMOVE_TEN, glm::vec2(250, 650)), m_isClicked(false)
 {
 
 }
