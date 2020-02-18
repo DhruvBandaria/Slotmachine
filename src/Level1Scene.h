@@ -26,6 +26,7 @@
 #include "Reel.h"
 #include "Label.h"
 #include "SlotMachine.h"
+#include "QuitButton.h"
 
 class Level1Scene : public Scene
 {
@@ -72,6 +73,7 @@ private:
 
 	SpinButton* m_pSpinButton;
 	RestButton* m_pRestButton;
+	QuitButton* m_pQuitButton;
 
 	Reel* m_pReel1;
 	Reel* m_pReel2;

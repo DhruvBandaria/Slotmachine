@@ -184,6 +184,7 @@
     <ClCompile Include="..\src\MiddleSection.cpp" />
     <ClCompile Include="..\src\Plane.cpp" />
     <ClCompile Include="..\src\PlayScene.cpp" />
+    <ClCompile Include="..\src\QuitButton.cpp" />
     <ClCompile Include="..\src\Reel.cpp" />
     <ClCompile Include="..\src\RemoveFifty.cpp" />
     <ClCompile Include="..\src\RemoveFive.cpp" />
@@ -233,6 +234,7 @@
     <ClInclude Include="..\src\Move.h" />
     <ClInclude Include="..\src\Plane.h" />
     <ClInclude Include="..\src\PlayScene.h" />
+    <ClInclude Include="..\src\QuitButton.h" />
     <ClInclude Include="..\src\Reel.h" />
     <ClInclude Include="..\src\RemoveFifty.h" />
     <ClInclude Include="..\src\RemoveFive.h" />

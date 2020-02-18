@@ -165,6 +165,9 @@
     <ClCompile Include="..\src\SlotMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\QuitButton.cpp">
+      <Filter>Game Objects\Buttons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -316,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="..\src\SlotMachine.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\QuitButton.h">
+      <Filter>Game Objects\Buttons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

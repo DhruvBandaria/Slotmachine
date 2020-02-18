@@ -74,17 +74,38 @@ std::string SlotMachine::spin()
 
 bool SlotMachine::checkJackpot()
 {
-	
+	int jackPotTry = floor(rand() * 51 + 1);
+	int jackPotWin = floor(rand() * 51 + 1);
+	if (jackPotTry == jackPotWin) {
+		m_playerMoney += m_jackpotAmount;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 std::string SlotMachine::showWinMessage()
 {
-	m_playerMoney = m_playerMoney + m_winnings;
-	return "Congratulations you won " + std::to_string(m_winnings);
+	if(checkJackpot())
+	{
+		return "Congratulations you won jackpot";
+	}
+	else
+	{
+		m_playerMoney = m_playerMoney + m_winnings;
+		return "Congratulations you won " + std::to_string(m_winnings);
+	}
+	
 }
 
 std::string SlotMachine::showLossMessage()
 {
+	if (checkJackpot())
+	{
+		return "Congratulations you won jackpot";
+	}
 	return "you lost";
 }
 
@@ -143,7 +164,7 @@ void SlotMachine::reels()
 std::string SlotMachine::calculateWin()
 {
 	//std::cout << "Outcome:" + betLine[0] + "," + betLine[1] + "," + betLine[2] << std::endl;
-	std::cout << "--------------------------------------------------" << std::endl;
+	/*std::cout << "--------------------------------------------------" << std::endl;
 	std::cout << "grapes:" << m_grapes << std::endl;
 	std::cout << "bananas:" << m_bananas << std::endl;
 	std::cout << "oranges:" << m_oranges << std::endl;
@@ -152,7 +173,7 @@ std::string SlotMachine::calculateWin()
 	std::cout << "bells:" << m_bells << std::endl;
 	std::cout << "sevens:" << m_sevens << std::endl;
 	std::cout << "blanks:" << m_blanks << std::endl;
-	std::cout << "--------------------------------------------------" << std::endl;
+	std::cout << "--------------------------------------------------" << std::endl;*/
 	std::string message = "";
 	if (m_blanks == 0)
 	{

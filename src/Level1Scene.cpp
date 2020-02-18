@@ -37,7 +37,7 @@ void Level1Scene::draw()
 
 	m_pSpinButton->draw();
 	m_pRestButton->draw();
-
+	m_pQuitButton->draw();
 	m_pBetAmount->draw();
 	m_pCurrentBalance->draw();
 	m_pLog->draw();
@@ -66,7 +66,7 @@ void Level1Scene::update()
 		}
 		if(isCUrrentlySpining)
 		{
-			std::cout << "I:" << i << "  Counter:" << counter << std::endl;
+			//std::cout << "I:" << i << "  Counter:" << counter << std::endl;
 			if(i>counter)
 			{
 				std::string temp = m_slotMachine->getFirstOutcome();
@@ -199,6 +199,10 @@ void Level1Scene::update()
 				m_slotMachine->resetAfterSpin();
 				m_pBetAmount->setText("Current Bet: " + m_slotMachine->getBetAmount());
 				m_pCurrentBalance->setText("Current Balance : " + m_slotMachine->getPlayerMoney());
+				if(message!="you lost")
+				{
+					TheSoundManager::Instance()->playSound("coins", 0);
+				}
 				m_pLog->setText(message);
 				isSpining = false;
 				isCUrrentlySpining = false;
@@ -253,6 +257,9 @@ void Level1Scene::update()
 	m_pRestButton->setMousePosition(m_mousePosition);
 	m_pRestButton->ButtonClick(this);
 
+	m_pQuitButton->setMousePosition(m_mousePosition);
+	m_pQuitButton->ButtonClick();
+
 }
 
 void Level1Scene::clean()
@@ -294,6 +301,7 @@ void Level1Scene::handleEvents()
 				m_pAllOut->setMouseButtonClicked(true);
 				m_pSpinButton->setMouseButtonClicked(true);
 				m_pRestButton->setMouseButtonClicked(true);
+				m_pQuitButton->setMouseButtonClicked(true);
 				break;
 			}
 		
@@ -316,6 +324,7 @@ void Level1Scene::handleEvents()
 				m_pAllOut->setMouseButtonClicked(false);
 				m_pSpinButton->setMouseButtonClicked(false);
 				m_pRestButton->setMouseButtonClicked(false);
+				m_pQuitButton->setMouseButtonClicked(false);
 				break;
 			}
 			break;
@@ -405,6 +414,7 @@ void Level1Scene::start()
 
 	m_pSpinButton = new SpinButton();
 	m_pRestButton = new RestButton();
+	m_pQuitButton = new QuitButton();
 
 	m_slotMachine = new SlotMachine();
 	
@@ -433,6 +443,9 @@ void Level1Scene::start()
 	
 	//m_pAddOneButton = new Button("../Assets/textures/AddOneButton.png", "addOne",
 		//ADD_ONE, glm::vec2(270, 590), true);
+
+	TheSoundManager::Instance()->load("../Assets/audio/coindrop.wav", "coins", SOUND_SFX);
+	TheSoundManager::Instance()->load("../Assets/audio/reelspin.wav", "reel", SOUND_SFX);
 	
 	addChild(m_pHeading);
 	addChild(m_pMiddleSection);
@@ -483,9 +496,12 @@ void Level1Scene::restStats()
 
 void Level1Scene::spin()
 {
-	message = m_slotMachine->spin();
-	if (message != "Please select your bet") {
-		isSpining = true;
+	if (!isSpining) {
+		message = m_slotMachine->spin();
+		if (message != "Please select your bet") {
+			isSpining = true;
+			TheSoundManager::Instance()->playSound("reel", 0);
+		}
 	}
 }
 

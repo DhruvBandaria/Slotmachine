@@ -5,7 +5,7 @@ RestButton::RestButton()
 	:Button(
 		"../Assets/textures/RestButton.png",
 		"restButton",
-		ADD_FIFTY, glm::vec2(680, 650)), m_isClicked(false)
+		ADD_FIFTY, glm::vec2(640, 650)), m_isClicked(false)
 {
 
 }
